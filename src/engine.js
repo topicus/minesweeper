@@ -1,5 +1,10 @@
 import {difference, range} from 'lodash';
 
+/**
+ * Reveal the cells using DFS.
+  * Left, right, top and bottom cells are the only
+ * nodes allowed to open a new graph branch.
+ */
 export const reveal = (nodes, start = 0, gameOverMode = false) => {
   let nodeIndexes = range(nodes.length);
   let visited = new Set();
@@ -17,7 +22,10 @@ export const reveal = (nodes, start = 0, gameOverMode = false) => {
   return nodes;
 };
 
-export const finish = (nodes) => {
+/**
+ * Reveal the mines.
+ */
+export const revealMines = (nodes) => {
   return nodes.map( node => {
     node.gameOverMode = true;
     return node
@@ -56,6 +64,10 @@ const getEdges = (coords, bounds) => {
   return { edges, path };
 };
 
+/**
+ * Given and index and the number of colums
+ * obtain the diagonal cells.
+ */
 const getDiagonals = (index, numColums) => {
   return [
     index - numColums - 1,

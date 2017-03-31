@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Row from './Row';
 import { range } from 'lodash';
-import { generateField, reveal, finish} from './engine';
+import { generateField, reveal, revealMines} from './engine';
 
 class App extends Component {
   constructor(props) {
@@ -20,8 +20,8 @@ class App extends Component {
     let nodes, field;
 
     if(gameOver) {
-      console.log('Game Over');
-      nodes = finish(this.state.field.nodes);
+      alert('GAME OVER');
+      nodes = revealMines(this.state.field.nodes);
     } else {
       nodes = reveal(this.state.field.nodes, index);
     }

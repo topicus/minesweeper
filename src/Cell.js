@@ -32,14 +32,15 @@ export default class Cell extends Component {
   }
 
   render() {
+    const mines = (Number(this.props.mines)) ? this.props.mines : '';
     const isMine = this.props.isMine;
     const gameOverMode = this.props.gameOverMode;
     const classes = cx('cell', {
       pressed: this.state.pressed,
       revealed: typeof this.props.mines !== 'undefined',
-      mine: isMine && gameOverMode
-    });
-    const mines = (Number(this.props.mines)) ? this.props.mines : '';
+      mine: isMine && gameOverMode,
+    }, [`mine-${mines}`]);
+
     return (
       <div
         onMouseDown={this.handlePress}
