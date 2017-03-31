@@ -1,0 +1,31 @@
+.table {
+  display: table;
+}
+.row {
+  display: table-row;
+}
+.cell {
+  display: table-cell;
+  height: 16px;
+  width: 16px;
+  text-align: center;
+  line-height: 16px;
+  border-right: 2px solid #7B7B7B;
+  border-bottom: 2px solid #7B7B7B;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  background-color: #BDBDBD;
+  cursor: pointer;
+}
+.pressed {
+  border-left: 2px solid #7B7B7B;
+  border-top: 2px solid #7B7B7B;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+}
+.revealed {
+  border: none;
+}
+.mine {
+  background: red;
+}
